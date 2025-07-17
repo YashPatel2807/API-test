@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const db_conn = () => {
   // Connect to MongoDB using the connection string from environment variables
   mongoose
-    .connect(process.env.MONGO_URI)
+    .connect(process.env.MONGO_URI, { autoIndex: true })
     .then(() => console.log("Connected to DB"))
     .catch((err) => console.log(err));
 };

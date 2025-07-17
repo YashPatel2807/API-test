@@ -36,6 +36,7 @@ const UserForm = () => {
       );
       console.log(response);
       setMessage(`${response.data.name} is created`);
+      setFormData({ name: "", email: "", password: "" });
     } catch (err) {
       console.error(err);
       setMessage(`Error while creating user.`);
