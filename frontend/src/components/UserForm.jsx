@@ -1,15 +1,23 @@
+/**
+ * React component for creating a new user.
+ * Manages form state, handles input changes, and submits data to backend.
+ */
+
 import React, { useState } from "react";
 import axios from "axios";
 
 const UserForm = () => {
+  // State to hold form input values
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   });
 
+  // State to hold success or error message
   const [message, setMessage] = useState("");
 
+  // Update formData state on input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -18,6 +26,7 @@ const UserForm = () => {
     console.log(formData);
   };
 
+  // Handle form submission to create a new user
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

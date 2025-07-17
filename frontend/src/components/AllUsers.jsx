@@ -1,11 +1,18 @@
+/**
+ * React component to display a list of all users.
+ * Fetches user data from backend and provides navigation back to form.
+ */
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function UsersPage() {
+  // State to hold list of users
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
+  // Fetch users from backend on component mount
   useEffect(() => {
     axios
       .post("http://localhost:4002/users")
